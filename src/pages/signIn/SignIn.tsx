@@ -1,5 +1,5 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../../firebaseConfig";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../../../firebaseConfig";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { string, object } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -32,12 +32,17 @@ const SignIn = () => {
     resolver: yupResolver(schema),
   });
 
-  const auth = getAuth(app);
-
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       navigate("/");
+    } catch (error) {
+      setError((error as FirebaseError)?.message.slice(9));
+    }
+  };
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
     } catch (error) {
       setError((error as FirebaseError)?.message.slice(9));
     }
@@ -85,11 +90,16 @@ const SignIn = () => {
             <p className="">{errors.password?.message}</p>
           </div>
         </div>
-        <div className="text-center error">{error}</div>
+        {error && <div className="text-center error">{error}</div>}
         <button className="btn" type="submit">
           Submit
         </button>
       </form>
+      <div className="d-flex flex-center mt-1">
+        <button className="btn" onClick={signInWithGoogle}>
+          Sign in with Google
+        </button>
+      </div>
       <div className="text-center mt-2">
         Don't have an account ? <Link to="/sign-up">Sign Up</Link>{" "}
       </div>

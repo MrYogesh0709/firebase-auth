@@ -1,5 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../../firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { string, object } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,6 +7,7 @@ import { useState } from "react";
 import { IFormInput } from "../signIn/SignIn";
 import { FirebaseError } from "firebase/app";
 import GithubLogo from "../../GithubLogo";
+import { auth } from "../../../firebaseConfig";
 
 const SignUp = () => {
   const [error, setError] = useState("");
@@ -28,8 +28,6 @@ const SignUp = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  const auth = getAuth(app);
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
@@ -78,7 +76,7 @@ const SignUp = () => {
             <p className="">{errors.password?.message}</p>
           </div>
         </div>
-        <div className="text-center  error">{error}</div>
+        {error && <div className="text-center error">{error}</div>}
         <button className="btn" type="submit">
           Submit
         </button>
