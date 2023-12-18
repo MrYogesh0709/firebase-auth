@@ -1,30 +1,70 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Firebase Authentication (React + Typescript + Vite)
 
-Currently, two official plugins are available:
+Firebase Authentication with validation yup and react-hook-form
+used react-router-dom-v6 for routing 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+https://authentication-e9930.web.app
 
-- Configure the top-level `parserOptions` property like this:
+## Environment Variables
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+To run this project, you will need to add the following environment variables to your .env file
+
+`VITE_API_KEY = YOUR_VITE_API_KEY
+VITE_AUTH_DOMAIN = YOUR_VITE_AUTH_DOMAIN 
+VITE_PROJECT_ID = YOUR_VITE_PROJECT_ID
+VITE_STORAGE_BUCKET = YOUR_VITE_STORAGE_BUCKET
+VITE_MESSAGING_SENDER_ID = YOUR_VITE_MESSAGING_SENDER_ID 
+VITE_APP_ID = YOUR_VITE_APP_ID`
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install 
+  cd firebase-auth
+  npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Features
+
+- Vanila CSS
+- Responsive design
+- React-router-dom
+- Yup Validation(react-hook-form)
+- Firebase login - register - logout
+- Firebase google login
+
+
+## Deployment
+
+To deploy this project run
+
+First step login to firebase
+```bash
+  firebase login
+
+```
+second step  firebase init
+```bash
+  firebase init
+```
+last step firebase deploy
+```bash
+  firebase deploy
+```
+
+- follow docs https://firebase.google.com/docs/hosting?hl=en
+## 🚀 About Me
+I'm a full stack developer...
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at yogeshvanzara98@gmail.com
+
