@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <main>
+    <main className="app mt-2">
       <img
         src={logout}
         alt="logout"

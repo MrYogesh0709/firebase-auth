@@ -7,7 +7,7 @@ export const Landing = ({ loading }: { loading: boolean }) => {
   const userContext = useContext(UserContext);
 
   if (loading) {
-    return <main>loading</main>;
+    return <main className="app mt-2">loading</main>;
   }
 
   return userContext?.user ? (
