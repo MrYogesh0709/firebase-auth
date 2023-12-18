@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
+  --border-input: 5px;
+
+  --font-large: 2.125rem;
+  --font-medium: 1.2rem;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+h1 {
+  font-size: --font-large;
+  font-weight: bold;
+  line-height: 1;
+}
+
+p {
+  font-size: small;
+  color: lightcoral;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  color: lightblue;
+}
+button {
+  padding: 10px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.app {
+  margin: 0 2rem;
+}
+.d-flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.gap-2 {
+  gap: 2rem;
+}
+
+.line {
+  height: 2px;
+  background-color: wheat;
+  margin: 2rem auto 0 auto;
+  width: 10%;
+}
+
+form {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+label {
+  width: 30%;
+}
+
+.input-field {
+  width: 70%;
+}
+
+.input {
+  outline: none;
+  border-radius: 4px;
+  padding: 5px 5px;
+  color: black;
+  font-size: medium;
+}
+
+.input:focus {
+  background-color: antiquewhite;
+  border: 2px solid lightskyblue;
+}
+
+.btn {
+  margin: 0 auto;
+  font-size: medium;
+}
+
+.btn:hover {
+  background-color: antiquewhite;
+  border: 2px solid lightskyblue;
+  transform: scale(1.01);
+}
+
+.error {
+  color: rgb(255, 0, 0, 0.8);
+}
+
+main {
+  margin: 2rem auto;
+}
+
+.logout {
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+.github {
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+.github:hover {
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
