@@ -3,7 +3,7 @@ import github from "./assets/github.svg";
 const GithubLogo = () => {
   return (
     <a
-      href="https://github.com/MrYogesh0709/registraion-form"
+      href="https://github.com/MrYogesh0709/firebase-auth"
       target="_blank"
       rel="noreferrer"
     >
